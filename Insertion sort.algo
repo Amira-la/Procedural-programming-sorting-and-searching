@@ -1,0 +1,19 @@
+def insertion_sort(numbers):
+    sorted_numbers = []
+    
+    for number in numbers:
+        # If the sorted_numbers list is empty or the number is less than the last element, append the number
+        if not sorted_numbers or number < sorted_numbers[-1]:
+            sorted_numbers.append(number)
+        else:
+            # Insert the number into the correct position
+            for i in range(len(sorted_numbers)):
+                if sorted_numbers[i] > number:
+                    sorted_numbers.insert(i, number)
+                    break
+    
+    return sorted_numbers
+
+numbers = [4, 2, 9, 6, 5, 1]
+sorted_numbers = insertion_sort(numbers)
+print(sorted_numbers)
